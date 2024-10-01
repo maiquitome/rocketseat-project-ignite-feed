@@ -12,6 +12,9 @@ export function Sidebar() {
       {/* <img className={styles.cover} src={coverImage} /> */}
 
       <div className={styles.profile}>
+        <div className={styles.avatar}>
+          <img src="https://github.com/maiquitome.png" />
+        </div>
         <strong>Maiqui Tomé</strong>
         <span>Web Developer</span>
       </div>
