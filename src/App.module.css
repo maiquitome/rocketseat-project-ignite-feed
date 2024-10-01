@@ -4,7 +4,7 @@
   padding-inline: 1rem;
 
   display: grid;
-  grid-template-columns: 256px 1fr;
+  grid-template-columns: 16rem 1fr;
   gap: 2rem;
   align-items: flex-start;
 }
