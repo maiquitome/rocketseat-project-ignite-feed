@@ -1,3 +1,5 @@
+import { PencilSimpleLine } from "phosphor-react";
+
 import styles from "./Sidebar.module.css";
 
 // import coverImage from "../assets/cover.jpg";
@@ -20,7 +22,10 @@ export function Sidebar() {
       </div>
 
       <footer>
-        <a href="#">Editar seu perfil</a>
+        <a href="#">
+          <PencilSimpleLine size={20} />
+          Editar seu perfil
+        </a>
       </footer>
     </aside>
   );

@@ -58,17 +58,23 @@
 
     & a {
       text-decoration: none;
-      color: var(--green-500);
+      color: var(--green-300);
       font-weight: bold;
 
       height: 3.125rem;
       border: 1px solid var(--green-500);
       border-radius: 0.5rem;
-      padding-inline: 1.5rem;
 
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 0.625rem;
+
+      transition: color 0.1s, background-color 0.1s;
+      &:hover {
+        background-color: var(--green-500);
+        color: var(--white);
+      }
     }
   }
 }
