@@ -19,25 +19,6 @@
     align-items: center;
 
     margin-top: -2rem;
-    & > div.avatar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 3.75rem;
-      height: 3.75rem;
-      background-color: var(--gray-800);
-      border-radius: 0.5rem;
-      border: 0.125rem solid var(--green-300);
-      z-index: 1;
-
-      & > img {
-        width: 3.125rem;
-        height: 3.125rem;
-        border-radius: 0.3125rem;
-      }
-    }
-
     & strong {
       margin-top: 1rem;
       color: var(--gray-100);

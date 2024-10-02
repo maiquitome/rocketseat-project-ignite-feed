@@ -1,0 +1,21 @@
+div.avatar,
+div.avatarWithBorder {
+  & > img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 0.3125rem;
+  }
+}
+
+div.avatarWithBorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: var(--gray-800);
+  border-radius: 0.5rem;
+  border: 0.125rem solid var(--green-300);
+  z-index: 1;
+}
