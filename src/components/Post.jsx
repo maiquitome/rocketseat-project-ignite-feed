@@ -8,7 +8,9 @@ import styles from "./Post.module.css";
 import { useState } from "react";
 
 export function Post({ author, published_at, content }) {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState(["Post muito bacana, ein!"]);
+
+  const [newCommentText, setNewCommentText] = useState("");
 
   // const publishedDateFormatted = new Intl.DateTimeFormat("pt-BR", {
   //   day: "2-digit",
@@ -33,8 +35,21 @@ export function Post({ author, published_at, content }) {
   function handleCreateNewComment() {
     event.preventDefault();
 
-    // * o valor original não é alterado, é passado um novo valor como argumento (imutabilidade)
-    setComments([...comments, comments.length + 1]);
+    // ! programação imperativa:
+    // const newCommentText = event.target.comment.value;
+
+    // ? o valor original não é alterado, é passado um novo valor como argumento (imutabilidade)
+    setComments([...comments, newCommentText]);
+
+    // * programação declarativa:
+    setNewCommentText("");
+
+    // ! programação imperativa:
+    // event.target.comment.value = "";
+  }
+
+  function handleNewCommentChange() {
+    setNewCommentText(event.target.value);
   }
 
   return (
@@ -77,7 +92,12 @@ export function Post({ author, published_at, content }) {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea placeholder="Deixe um comentário" />
+        <textarea
+          name="comment"
+          placeholder="Deixe um comentário"
+          value={newCommentText}
+          onChange={handleNewCommentChange}
+        />
 
         <footer>
           <button type="submit">Publicar</button>
@@ -86,7 +106,7 @@ export function Post({ author, published_at, content }) {
 
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment />;
+          return <Comment content={comment} />;
         })}
       </div>
     </article>
