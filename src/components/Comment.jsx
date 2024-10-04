@@ -11,7 +11,15 @@ export function Comment(props) {
   }
 
   function handleLikeComment() {
-    setLikeCount(likeCount + 1);
+    // ! likeCount será sempre o valor antigo
+    // setLikeCount(likeCount + 1);
+    // setLikeCount(likeCount + 1);
+    // ? não importa se executar `setLikeCount(likeCount + 1)` mais de 2X, o valor será sempre o mesmo
+
+    // * state será sempre o valor atual
+    setLikeCount((state) => {
+      return state + 1;
+    });
   }
 
   return (
