@@ -1,22 +1,17 @@
-div.avatar,
-div.avatarWithBorder {
-  & > img {
-    width: 3.125rem;
-    height: 3.125rem;
-    border-radius: 0.3125rem;
-  }
+.avatar {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 0.5rem;
 }
 
-div.avatarWithBorder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-
-  width: 3.75rem;
-  height: 3.75rem;
-  background-color: var(--gray-800);
+.avatarWithBorder {
+  /* 50px da imagem - 4px do outline que não faz parte do box-model resulta em `46px (2.875rem)` */
+  width: calc(2.875rem + 10px);
+  height: calc(2.875rem + 10px);
   border-radius: 0.5rem;
-  border: 0.125rem solid var(--green-300);
+
+  /* 10px ao redor da imagem: */
+  border: 3px solid var(--gray-800);
+  outline: 2px solid var(--green-300);
   z-index: 1;
 }
